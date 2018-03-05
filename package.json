@@ -11,9 +11,6 @@
     "express": "^4.13.3",
     "random-item": "^1.0.0"
   },
-  "engines": {
-    "node": "4.0.0"
-  },
   "keywords": [
     "Fortnite",
     "Random drop"
