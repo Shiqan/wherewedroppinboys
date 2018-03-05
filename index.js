@@ -32,10 +32,10 @@ client.on("ready", function () {
 	console.log("Ready to begin! Serving in " + client.channels.length + " channels");
 });
 
-client.on("message", function(message) {
-    if (message.content === "!drop") {
-      client.reply(randomItem(locations));
-    }
+client.on('message', msg => {
+  if (msg.content === '!drop') {
+    msg.reply(randomItem(locations));
+  }
 });
 
 client.login(token).catch(error => {
