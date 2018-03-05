@@ -4,6 +4,7 @@ var randomItem = require('random-item');
 
 var app = express()
 var client = new Discord.Client();
+var token = process.env.CLIENT || '';
 
 var locations = [
   "Junk Junction",
@@ -49,3 +50,6 @@ app.get('/', function(request, response) {
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
 })
+
+
+client.login(token);
