@@ -1,10 +1,8 @@
-var express = require('express')
-var Discord = require("discord.js");
-var randomItem = require('random-item');
+const  Discord = require("discord.js");
+const  randomItem = require('random-item');
 
-var app = express()
-var client = new Discord.Client();
-var token = process.env.CLIENT || '';
+const  client = new Discord.Client();
+const  token = process.env.CLIENT || '';
 
 var locations = [
   "Junk Junction",
@@ -39,17 +37,5 @@ client.on("message", function(message) {
       client.reply(randomItem(locations));
     }
 });
-
-app.set('port', (process.env.PORT || 5000))
-app.use(express.static(__dirname + '/public'))
-
-app.get('/', function(request, response) {
-  response.send('Hello World!')
-})
-
-app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'))
-})
-
 
 client.login(token);
