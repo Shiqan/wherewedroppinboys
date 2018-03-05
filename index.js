@@ -38,4 +38,6 @@ client.on("message", function(message) {
     }
 });
 
-client.login(token);
+client.login(token).catch(error => {
+  console.log(error);
+});
