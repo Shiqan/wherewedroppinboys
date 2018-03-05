@@ -29,12 +29,14 @@ var locations = [
   "Moisty Mire"];
 
 client.on("ready", function () {
-	console.log("Ready to begin! Serving in " + client.channels.length + " channels");
+	console.log("Ready to begin!");
 });
 
 client.on('message', msg => {
   if (msg.content === '!drop') {
-    msg.reply(randomItem(locations));
+    msg.reply(randomItem(locations))
+      .then(sent => console.log(`Sent a reply to ${sent.author.username}`))
+      .catch(console.error);
   }
 });
 
