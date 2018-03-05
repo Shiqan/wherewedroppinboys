@@ -35,7 +35,7 @@ client.on("ready", function () {
 client.on('message', msg => {
   if (msg.content === '!drop') {
     msg.reply(randomItem(locations))
-      .then(sent => console.log(`Sent a reply to ${sent.author.username}`))
+      .then(sent => console.log(`Sent a reply to ${msg.author.username}`))
       .catch(console.error);
   }
 });
