@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "discord.js": "^7.0.1",
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "random-item": "^1.0.0"
   },
   "engines": {
     "node": "4.0.0"
